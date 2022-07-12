@@ -1,0 +1,54 @@
+﻿@page
+@model CLDV6211_POE.Pages.Drivers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].DriverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].DriverAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].DriverEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].DriverMobile)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Driver) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverMobile)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DriverId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DriverId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DriverId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

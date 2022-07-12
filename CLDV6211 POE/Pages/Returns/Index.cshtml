@@ -1,0 +1,53 @@
+﻿@page
+@model CLDV6211_POE.Pages.Returns.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].ReturnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].ElapsedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].Fine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].RentalNoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RentalReturn) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElapsedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalNoNavigation.RentalNo)
+            </td>
+            <td>
+                
+                <a asp-page="./Details" asp-route-id="@item.ReturnNo">Details</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

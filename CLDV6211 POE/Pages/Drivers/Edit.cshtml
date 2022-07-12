@@ -1,0 +1,50 @@
+﻿@page
+@model CLDV6211_POE.Pages.Drivers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Driver</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Driver.DriverId" />
+            <div class="form-group">
+                <label asp-for="Driver.DriverName" class="control-label"></label>
+                <input asp-for="Driver.DriverName" class="form-control" />
+                <span asp-validation-for="Driver.DriverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.DriverAddress" class="control-label"></label>
+                <input asp-for="Driver.DriverAddress" class="form-control" />
+                <span asp-validation-for="Driver.DriverAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.DriverEmail" class="control-label"></label>
+                <input asp-for="Driver.DriverEmail" class="form-control" />
+                <span asp-validation-for="Driver.DriverEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.DriverMobile" class="control-label"></label>
+                <input asp-for="Driver.DriverMobile" class="form-control" />
+                <span asp-validation-for="Driver.DriverMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

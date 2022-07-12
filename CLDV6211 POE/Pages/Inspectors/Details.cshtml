@@ -1,0 +1,37 @@
+﻿@page
+@model CLDV6211_POE.Pages.Inspectors.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Inspector</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inspector.InspectorName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inspector.InspectorName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inspector.InspectorEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inspector.InspectorEmail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inspector.InspectorMobile)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inspector.InspectorMobile)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Inspector.InspectorNo">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

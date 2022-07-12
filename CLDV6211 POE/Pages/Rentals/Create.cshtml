@@ -1,0 +1,61 @@
+﻿@page
+@model CLDV6211_POE.Pages.Rentals.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Rental</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Rental.RentalNo" class="control-label"></label>
+                <input asp-for="Rental.RentalNo" class="form-control" />
+                <span asp-validation-for="Rental.RentalNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rental.RentalFee" class="control-label"></label>
+                <input asp-for="Rental.RentalFee" class="form-control" />
+                <span asp-validation-for="Rental.RentalFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rental.StartDate" class="control-label"></label>
+                <input asp-for="Rental.StartDate" class="form-control" />
+                <span asp-validation-for="Rental.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rental.EndDate" class="control-label"></label>
+                <input asp-for="Rental.EndDate" class="form-control" />
+                <span asp-validation-for="Rental.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rental.CarNo" class="control-label"></label>
+                <select asp-for="Rental.CarNo" class ="form-control" asp-items="ViewBag.CarNo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rental.InspectorNo" class="control-label"></label>
+                <select asp-for="Rental.InspectorNo" class ="form-control" asp-items="ViewBag.InspectorNo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rental.DriverId" class="control-label"></label>
+                <select asp-for="Rental.DriverId" class ="form-control" asp-items="ViewBag.DriverId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

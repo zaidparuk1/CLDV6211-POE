@@ -1,0 +1,65 @@
+﻿@page
+@model CLDV6211_POE.Pages.Rentals.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].RentalFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].CarNoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].Driver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].InspectorNoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Rental) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarNoNavigation.CarNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Driver.DriverId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InspectorNoNavigation.InspectorNo)
+            </td>
+            <td>
+                
+                <a asp-page="./Details" asp-route-id="@item.RentalNo">Details</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
